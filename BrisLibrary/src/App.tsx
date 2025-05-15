@@ -1,5 +1,9 @@
 import './App.css'
+import { useState } from 'react';
 import LibraryLogo from './assets/LibraryLogo.png'
+import WelcomePage from './pages/WelcomePage';
+import LibraryPage from './pages/LibraryPage';
+
 
 function Start() {
   return (
@@ -15,15 +19,14 @@ function Start() {
 }
 
 function App() {
+  const [started, setStarted] = useState(false);
   return (
     <>
-      <div>
-        <Start />
-      </div>
-      <div>
-        <img src={LibraryLogo} className="w-48 object-contain mix-blend-darken" alt="Logo" />
-      </div>
-      
+    {!started ? (
+        <WelcomePage onStart={() => setStarted(true)} />
+      ) : (
+        <LibraryPage />
+      )}
     </>
   )
 }
