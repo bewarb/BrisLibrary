@@ -1,6 +1,5 @@
 import './App.css'
 import { useState } from 'react';
-import LibraryLogo from './assets/LibraryLogo.png'
 import WelcomePage from './pages/WelcomePage';
 import LibraryPage from './pages/LibraryPage';
 
